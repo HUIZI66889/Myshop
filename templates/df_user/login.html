@@ -1,0 +1,71 @@
+{% extends 'base_foot.html' %}
+
+{% block head %}
+<script>
+    $(function () {
+        name_error = false;
+        pwd_error = false;
+
+        if({{ error_name }}==1){
+            $('.user_error').html('username error').show();
+        }
+        if({{ error_pwd }}==1){
+            $('.pwd_error').html('wrong password').show();
+        }
+        $('.name_input').blur(function () {
+            if($('.name_input').val().length=0){
+                $('.user_error').html('Please enter your username').show();
+                name_error = false;
+            }else{
+                $('.user_error').hide();
+                name_error = true;
+            }
+        });
+        $('.pass_input').blur(function () {
+            if($('.pass_input').val().length=0){
+                $('.pwd_error').html('please enter password').show();
+                pwd_error = false;
+            }else{
+                $('.pwd_error').hide();
+                pwd_error = true;
+            }
+        })
+    })
+</script>
+{% endblock head %}
+
+{% block body %}
+	<div class="login_top clearfix">
+		<a href="{% url "df_goods:index" %}" class="login_logo"></a>
+	</div>
+
+	<div class="login_form_bg">
+		<div class="login_form_wrap clearfix">
+			<div class="login_banner fl"></div>
+			<div class="slogan fl">Travel day and night · Shopping assistant</div>
+			<div class="login_form fr">
+				<div class="login_title clearfix">
+					<h1>User login</h1>
+					<a href="{% url "df_user:register" %}">Sign up now</a>
+				</div>
+				<div class="form_input">
+					<form action="{% url "df_user:login_handle" %}" method="post">
+                        {% csrf_token %}
+						<input type="text" name="username" class="name_input" value="{{ username }}" placeholder="please enter user name">
+						<div class="user_error">input error</div>
+						<input type="password" name="pwd" class="pass_input" value="{{ password }}" placeholder="please enter password">
+{#                        In the case of cookie settings, the value value guarantees that the value can still be seen on the page after the page is refreshed#}
+						<div class="pwd_error">input error</div>
+						<div class="more_input clearfix">
+							<input type="checkbox" name="jizhu" value="1" checked="checked">
+							<label>Remember Account Name</label>
+							<a href="{% url "df_user:findpassword" %}">forget the password</a>
+						</div>
+						<input type="submit" name="" value="Log in" class="input_submit">
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock body %}
