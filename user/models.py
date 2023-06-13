@@ -16,7 +16,7 @@ class UserInfo(models.Model):
     uaddress = models.CharField(max_length=100, default="", verbose_name="address")
     uyoubian = models.CharField(max_length=6, default="", verbose_name="post code")
     uphone = models.CharField(max_length=11, default="", verbose_name="Phone number")
-    # default,blank是python层面的约束，不影响数据库表结构，修改时不需要迁移 python manage.py makemigrations
+    # default, blank is a constraint at the python level, does not affect the database table structure, and does not need to be migrated when modifying python manage.py makemigrations
 
     class Meta:
         verbose_name = "User Info"

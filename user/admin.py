@@ -20,8 +20,8 @@ class GoodsBrowserAdmin(admin.ModelAdmin):
     refresh_times = [3, 5]
 
 
-admin.site.site_header = '后台管理'
-admin.site.site_title = '后台管理'
+admin.site.site_header = 'Backstage management'
+admin.site.site_title = 'Backstage management'
 
 admin.site.register(UserInfo, UserInfoAdmin)
 admin.site.register(GoodsBrowser, GoodsBrowserAdmin)
