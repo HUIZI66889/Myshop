@@ -32,7 +32,7 @@ $(function(){
 		else
 		{
 			error_check = true;
-			$(this).siblings('span').html('请勾选同意');
+			$(this).siblings('span').html('Please check to agree');
 			$(this).siblings('span').show();
 		}
 	});
@@ -43,7 +43,7 @@ $(function(){
 
 		if(len<5||len>20)
 		{
-			$('#user_name').next().html('输入5-20个字符的用户名');
+			$('#user_name').next().html('Enter a username of 5-20 characters');
 			$('#user_name').next().show();
 			error_name = true;
 
@@ -52,7 +52,7 @@ $(function(){
 		{
 			$.get('/user/register_exist/?uname='+$('#user_name').val(),function(data){
                 if (data.count >= 1) {
-                    $('#user_name').next().html('用户名已经存在').show();
+                    $('#user_name').next().html('username already exists').show();
                     error_name = true;
                 }else{
                     $('#user_name').next().hide();
@@ -66,7 +66,7 @@ $(function(){
 		var len = $('#pwd').val().length;
 		if(len<4||len>20)
 		{
-			$('#pwd').next().html('密码最少4位，最长20位');
+			$('#pwd').next().html('The minimum password is 4 characters, the longest is 20 characters');
 			$('#pwd').next().show();
 			error_password = true;
 		}
@@ -84,7 +84,7 @@ $(function(){
 
 		if(pass!=cpass)
 		{
-			$('#cpwd').next().html('两次输入的密码不一致');
+			$('#cpwd').next().html('The two entered passwords do not match');
 			$('#cpwd').next().show();
 			error_check_password = true;
 		}
@@ -106,7 +106,7 @@ $(function(){
 		}
 		else
 		{
-			$('#email').next().html('你输入的邮箱格式不正确');
+			$('#email').next().html('The email format you entered is incorrect');
 			$('#email').next().show();
 			error_check_password = true;
 		}
