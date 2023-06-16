@@ -4,34 +4,34 @@
 
     <div class="header_con">
 		<div class="header">
-			<div class="welcome fl">Welcome to the clothing website!</div>
+			<div class="welcome fl">Welcome to the Clothing Shopping Mall!</div>
 			<div class="fr">
-{#                Determine whether you have logged in#}
+{#                判断是否已经登录#}
                 {% if request.session.user_name|default:'' != '' %}
-{#                    The default filter judges that if request.session.user_name is not equal to an empty string, the user login status is true#}
-{#                    That is to say, when the user is logged in, the user name is displayed#}
+{#                    default过滤器进行判断如果request.session.user_name不等于空字符串则用户登陆状态为true#}
+{#                    也就是说当用户为已登陆状态时则显示用户名#}
 
 {#                    class="login_info fl"#}
-				<div class="login_btn fl">Welcome：<em>{{ request.session.user_name }}</em>
+				<div class="login_btn fl">Welcome to:<em>{{ request.session.user_name }}</em>
                     <span>|</span>
-                    <em><a href="{% url "df_user:logout" %}">quit</a></em>
+                    <em><a href="{% url "df_user:logout" %}">Exit</a></em>
 				</div>
                 {% else %}
 				<div class="login_btn fl">
-					<a href="{% url "df_user:login" %}">Log in</a>
+					<a href="{% url "df_user:login" %}">Login</a>
 					<span>|</span>
-					<a href="{% url "df_user:register" %}">register</a>
+					<a href="{% url "df_user:register" %}">Register</a>
 				</div>
                 {% endif %}
 				<div class="user_link fl">
 					<span>|</span>
-					<a href="{% url "df_goods:index" %}">front page</a>
+					<a href="{% url "df_goods:index" %}">Home</a>
 					<span>|</span>
 					<a href="{% url "df_user:info" %}">User Center</a>
 					<span>|</span>
-					<a href="{% url "df_cart:cart" %}">my shopping cart</a>
+					<a href="{% url "df_cart:cart" %}">My Cart</a>
 					<span>|</span>
-					<a href="{% url "df_user:order" 1 %}">My Order</a>
+					<a href="{% url "df_user:order" 1 %}">My Orders</a>
 				</div>
 			</div>
 		</div>
@@ -54,13 +54,13 @@
                 })
 
             </script>
-			<input type="text" class="input_text fl" name="q" placeholder="search product">
-			<input type="button" class="input_btn fr" name="" value="search">
+			<input type="text" class="input_text fl" name="q" placeholder="Search for products">
+			<input type="button" class="input_btn fr" name="" value="Search">
 		</div>
 
         {% if guest_cart == 1 %}
             <div class="guest_cart fr">
-                <a href="{% url "df_cart:cart" %}" class="cart_name fl">my shopping cart</a>
+                <a href="{% url "df_cart:cart" %}" class="cart_name fl">My cart</a>
                 <div class="goods_count fl" id="show_count">{{ cart_num }}</div>
             </div>
         {% endif %}
