@@ -1,11 +1,11 @@
-from django.urls import re_path
+from django.conf.urls import url
 
 from . import views
 
 app_name = 'df_order'
 
 urlpatterns = [
-    re_path(r'^$', views.order, name="order"),
-    re_path(r'^push/$', views.order_handle, name="push"),
+    url(r'^$', views.order, name="order"),
+    url(r'^push/$', views.order_handle, name="push"),
 ]
 
