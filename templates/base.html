@@ -6,15 +6,15 @@
 		<div class="header">
 			<div class="welcome fl">Welcome to the Clothing Shopping Mall!</div>
 			<div class="fr">
-{#                判断是否已经登录#}
+{#               determine if the user already login #}
                 {% if request.session.user_name|default:'' != '' %}
 {#                    default过滤器进行判断如果request.session.user_name不等于空字符串则用户登陆状态为true#}
 {#                    也就是说当用户为已登陆状态时则显示用户名#}
 
 {#                    class="login_info fl"#}
-				<div class="login_btn fl">Welcome to:<em>{{ request.session.user_name }}</em>
+				<div class="login_btn fl">Welcome <em>{{ request.session.user_name }}</em>
                     <span>|</span>
-                    <em><a href="{% url "df_user:logout" %}">Exit</a></em>
+                    <em><a href="{% url "df_user:logout" %}">Logout</a></em>
 				</div>
                 {% else %}
 				<div class="login_btn fl">
