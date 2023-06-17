@@ -70,11 +70,11 @@ WSGI_APPLICATION = 'Myshop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'phone', #数据库名称
-        'USER': 'root',#用户名
-        'PASSWORD': 'root', #密码
-        'HOST': 'localhost', #地址
-        'PORT': '3306', #端口
+        'NAME': 'phone', #database name
+        'USER': 'root',#username
+        'PASSWORD': 'root', #password
+        'HOST': 'localhost', #address
+        'PORT': '3306', #port
         'CHARSET': 'utf8',
         'COLLATION': 'utf8_general_ci',
         'OPTIONS': {'isolation_level': None},
@@ -104,9 +104,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'zh-hans'
+LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Asia/Shanghai'
+TIME_ZONE = 'Asia/Kuala_Lumpur'
 
 USE_I18N = True
 
