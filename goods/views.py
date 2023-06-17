@@ -51,7 +51,7 @@ def index(request):
 
 
 def good_list(request, tid, pindex, sort):
-    # tid：商品种类信息  pindex：商品页码 sort：商品显示分类方式
+    # tid：product type id, pindex：product index, sort：商品显示分类方式
     typeinfo = TypeInfo.objects.get(pk=int(tid))
 
     # 根据主键查找当前的商品分类  海鲜或者水果
@@ -71,7 +71,7 @@ def good_list(request, tid, pindex, sort):
     # 返回Page对象，包含商品信息
     page = paginator.page(int(pindex))
     context = {
-        'title': '商品列表',
+        'title': 'Product List',
         'guest_cart': guest_cart,
         'cart_num': cart_num,
         'page': page,
