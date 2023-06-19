@@ -14,13 +14,15 @@ def user_cart(request):
         'page_name': 1,
         'carts': carts
     }
-    if request.is_ajax():
+    if is_ajax(request):
         count = CartInfo.objects.filter(user_id=request.session['user_id']).count()
         # 求当前用户购买了几件商品
         return JsonResponse({'count': count})
     else:
         return render(request, 'df_cart/cart.html', context)
 
+def is_ajax(request):
+    return request.headers.get('x-requested-with') == 'XMLHttpRequest'
 
 @user_decorator.login
 def add(request, gid, count):
@@ -38,7 +40,7 @@ def add(request, gid, count):
         cart.count = count
     cart.save()
     # 如果是ajax提交则直接返回json，否则转向购物车
-    if request.is_ajax():
+    if is_ajax(request):
         count = CartInfo.objects.filter(user_id=request.session['user_id']).count()
         # 求当前用户购买了几件商品
         return JsonResponse({'count': count})
