@@ -25,14 +25,16 @@ html,body{height:100%}
 	display:none;
 }
 
-.login_info em{color:#ff8800}
+.login_info em {
+	color: #0400ff
+}
 
 .login_btn a,.user_link a{
 	color:#666;
 }
 
 .login_btn a:hover,.user_link a:hover{
-	color:#ff8800;
+	color: #0400ff;
 }
 
 .login_btn span,.user_link span{
@@ -85,7 +87,9 @@ html,body{height:100%}
 
 .guest_cart .goods_count{
 	width:40px;height:40px;text-align:center;line-height:40px;font-size:18px;
-	font-weight:bold;color:#fff;background-color:#ff8800;
+	font-weight: bold;
+		color: #fff;
+		background-color: #0400ff;
 }
 
 
@@ -136,7 +140,9 @@ html,body{height:100%}
 	color: #666;
 	font-size: 18px
 }
-.navlist li a:hover{color:#ff8800}
+.navlist li a:hover {
+	color: #0400ff
+}
 .navlist .interval{margin:0 15px;}
 
 
@@ -152,7 +158,9 @@ html,body{height:100%}
 	font-size: 18px;
 	color: #333
 }
-.subnav li a:hover{color:#ff8800}
+.subnav li a:hover {
+	color: #0400ff
+}
 
 .subnav li .fruit{background:url(../images/icons.png) 28px 0px no-repeat;}
 .subnav li .seafood{background:url(../images/icons.png) 28px -43px no-repeat;}
@@ -193,7 +201,10 @@ html,body{height:100%}
 .list_title .subtitle{height:20px;line-height:20px;margin-top:15px;}
 .list_title .subtitle span{color:#666;margin:0 10px 0 20px;}
 .list_title .subtitle a{color:#666;margin:0 5px;}
-.list_title .subtitle a:hover,.goods_more:hover{color:#ff8800}
+.list_title .subtitle a:hover,
+.goods_more:hover {
+	color: #0400ff
+}
 .goods_more{height:20px;margin-top:15px;color:#666}
 
 .goods_con{height:300px;}
@@ -216,7 +227,9 @@ html,body{height:100%}
 	font-weight: normal;
 	line-height: 24px;
 }
-.goods_list li h4 a:hover{color:#ff8800}
+.goods_list li h4 a:hover {
+	color: #0400ff
+}
 
 .goods_list li img{display:block;width:180px;height:180px;margin:0 auto;}
 .goods_list li .prize{text-align:center;font-size:20px;color:#c40000;margin-top:5px;}
@@ -229,7 +242,9 @@ html,body{height:100%}
 
 .foot_link{text-align:center;margin-top:30px;}
 .foot_link a,.foot_link span{color:#4e4e4e;}
-.foot_link a:hover{color:#ff8800}
+.foot_link a:hover {
+	color: #0400ff
+}
 .foot_link span{padding:0 10px}
 .footer p{text-align:center; margin-top:10px;}
 
@@ -242,7 +257,9 @@ html,body{height:100%}
 	line-height: 40px;
 	color: #7836f1
 }
-.breadcrumb a:hover{color:#ff8800}
+.breadcrumb a:hover {
+	color: #0400ff
+}
 .breadcrumb span{line-height:40px;color:#666;padding:0 5px;}
 
 
@@ -478,7 +495,7 @@ html,body{height:100%}
 	font-size: 16px;
 	color: #662ab4;
 	text-indent: 26px;
-	background: url(../images/icons02.png) left 5px no-repeat;
+	/* background: url(../images/icons02.png) left 5px no-repeat; */
 	float: left;
 	margin: 20px 0 0 36px
 }
@@ -489,7 +506,7 @@ html,body{height:100%}
 	width: 306px;
 	height: 36px;
 	border: 1px solid #e0e0e0;
-	background: url(../images/icons02.png) 280px -41px no-repeat #f8f8f8;
+	/* background: url(../images/icons02.png) 280px -41px no-repeat #f8f8f8; */
 	outline: none;
 	font-size: 18px;
 	text-indent: 10px;
@@ -508,7 +525,9 @@ html,body{height:100%}
 .more_input input{float:left;margin-top:2px;}
 .more_input label{float:left;margin-left:10px;}
 .more_input a{float:right;color:#666}
-.more_input a:hover{color:#ff8800}
+.more_input a:hover {
+	color: #0400ff
+}
 
 .input_submit {
 	width: 100%;
@@ -557,7 +576,7 @@ html,body{height:100%}
 	font-size: 20px;
 	color: #2a7db4;
 	padding-right: 20px;
-	background: url(../images/icons02.png) 35px 3px no-repeat;
+	/* background: url(../images/icons02.png) 35px 3px no-repeat; */
 	margin-top: 15px
 }
 
@@ -568,7 +587,7 @@ html,body{height:100%}
 	height: 40px;
 	line-height: 40px;
 	float: left;
-	font-size: 22px;
+	font-size: 16px;
 	color: #a8a8a8
 }
 .reg_form li input{width:288px;height:38px;border:1px solid #e0e0e0;float:left;outline:none;text-indent:10px;background-color:#f8f8f8}
@@ -621,7 +640,12 @@ html,body{height:100%}
 		margin: 0 5px;
 }
 
-.cart_list_th{width:1198px;border:1px solid #ddd;background-color:#f7f7f7;margin:0 auto;}
+.cart_list_th {
+	width: 1198px;
+	border: 1px solid #ddd;
+	background-color: #f3ff85;
+	margin: 0 auto;
+}
 .cart_list_th li{height:40px;line-height:40px;float:left;text-align:center;}
 .cart_list_th .col01{width:26%;}
 .cart_list_th .col02{width:16%;}
@@ -656,14 +680,25 @@ html,body{height:100%}
 	font-size: 22px;
 	color: #666
 }
-.cart_list_td .col06 .num_add input{width:38px;height:28px;text-align:center;line-height:30px;border:0px;display:block;float:left;outline:none;border-left:1px solid #ddd;border-right:1px solid #ddd;}
+.cart_list_td .col06 .num_add input {
+	width: 38px;
+	height: 28px;
+	text-align: center;
+	line-height: 30px;
+	border: 0px;
+	display: block;
+	float: left;
+	outline: none;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ffffff;
+}
 
 
 .settlements {
 	width: 1198px;
 	height: 78px;
 	border: 1px solid #ddd;
-	background-color: #e8f2ff;
+	background-color: #ffffff;
 	margin: -1px auto 0;
 }
 .settlements li{line-height:78px;float:left;}
@@ -709,7 +744,14 @@ html,body{height:100%}
 	font-size: 18px;
 }
 
-.common_list_con{width:1200px;border:1px solid #dddddd;border-top:2px solid #00bc6f;margin:10px auto 0;background-color:#f7f7f7;position:relative;}
+.common_list_con {
+	width: 1200px;
+	border: 1px solid #dddddd;
+	/* border-top: 1px solid #00bc6f; */
+	margin: 10px auto 0;
+	background-color: #ffffff;
+	position: relative;
+}
 
 .common_list_con dl{margin:20px;}
 .common_list_con dt {
@@ -868,7 +910,7 @@ html,body{height:100%}
 }
 
 .left_menu_con ul li .active{
-	color:#ff8800;
+	color: #0400ff;
 	font-weight:bold;
 }
 
@@ -988,7 +1030,7 @@ html,body{height:100%}
 }
 
 .stress{
-	color:#ff8800;
+	color: #0400ff;
 }
 
 .code{

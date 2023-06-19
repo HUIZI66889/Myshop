@@ -3,16 +3,16 @@
 {% block body %}
 
     <div class="cancelheader_con">
-		<div class="navbar">
-			<div class="narbar-brand welcome fl">Clothing Shopping Mall!</div>
-			<div class="fr">
+		<div class="navbar d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+			<div class="narbar-brand welcome fl">Clothing Shopping Mall</div>
+			{% comment %} <div class="fr"> {% endcomment %}
 {#               determine if the user already login #}
                 {% if request.session.user_name|default:'' != '' %}
 {#                    default过滤器进行判断如果request.session.user_name不等于空字符串则用户登陆状态为true#}
 {#                    也就是说当用户为已登陆状态时则显示用户名#}
 
 {#                    class="login_info fl"#}
-				<div class="navbar-item login_btn fl">Welcome <em>{{ request.session.user_name }}</em>
+				<div class="navbar-item login_btn fl">&nbsp Welcome <em>{{ request.session.user_name }}</em>
                     <span>&nbsp</span>
                     <em><a href="{% url "df_user:logout" %}">Logout</a></em>
 				</div>
@@ -42,7 +42,7 @@
 					<a href="{% url "df_user:order" 1 %}">My Orders</a>
 				</div>
 			</div>
-		</div>
+		{% comment %} </div> {% endcomment %}
 	</div>
 
 
