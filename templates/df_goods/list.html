@@ -3,7 +3,7 @@
 {% block center_content %}
 
 	<div class="main_wrap clearfix">
-		<div class="l_wrap fl clearfix">
+		{% comment %} <div class="l_wrap fl clearfix">
 			<div class="new_goods">
 				<h3>New Products</h3>
 				<ul>
@@ -16,10 +16,10 @@
                     {% endfor %}
 				</ul>
 			</div>
-		</div>
+		</div> {% endcomment %}
 
 		<div class="r_wrap fr clearfix">
-			<div class="sort_bar">
+			{% comment %} <div class="sort_bar">
 
 {#          注意视图函数中的传参顺序 另外在url中传递的链接全为字符型  #}
                 <a href="/list{{ typeinfo.id }}_1_1"
@@ -32,7 +32,7 @@
                     class="active"
                    {% endif %}
                     >Price</a>
-			</div>
+			</div> {% endcomment %}
 
 			<ul class="goods_type_list clearfix">
 

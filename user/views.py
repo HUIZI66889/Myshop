@@ -62,7 +62,6 @@ def login_handle(request):
     # accept request information
     uname = request.POST.get('username')
     upwd = request.POST.get('pwd')
-    jizhu = request.POST.get('jizhu', 0)
     users = UserInfo.objects.filter(uname=uname)
     if len(users) == 1:  # Determine the user password and jump
         s1 = sha1()
@@ -71,10 +70,7 @@ def login_handle(request):
             url = request.COOKIES.get('url', '/')
             red = HttpResponseRedirect(url)  # Inherit and HttpResponse set a cookie value while jumping
             # Whether to check remember user name, set cookie
-            if jizhu != 0:
-                red.set_cookie('uname', uname)
-            else:
-                red.set_cookie('uname', '', max_age=-1)  # Set expiration cookie time, expire immediately
+            red.set_cookie('uname', '', max_age=-1)  # Set expiration cookie time, expire immediately
             request.session['user_id'] = users[0].id
             request.session['user_name'] = uname
             return red

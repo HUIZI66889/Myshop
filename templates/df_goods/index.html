@@ -7,7 +7,7 @@
 
 {% block center_body %}
 
-	<div class="navbar_con">
+	{% comment %} <div class="navbar_con">
 		<div class="navbar">
 			<h1 class="fl">All Product Categories</h1>
 			<ul class="navlist fl">
@@ -15,8 +15,8 @@
 
 			</ul>
 		</div>
-	</div>
-
+	</div> {% endcomment %}
+{% comment %} 
 	<div class="center_con clearfix">
 		<ul class="subnav fl">
 					<li><a href="/list1_1_1" >Jackets</a></li>
@@ -41,18 +41,17 @@
 			<a href="#"><img src="/static/images/111.png"</a>
 			<a href="#"><img src="/static/images/111.png"</a>
 		</div>
-	</div>
+	</div> {% endcomment %}
 
 	<div class="list_model">
 		<div class="list_title clearfix">
 			<h3 class="fl" id="model01">Jackets</h3>
 			<div class="subtitle fl">
-				<span>|</span>
                 {% for g in type0 %}
                     <a href="/{{ g.id }}/detail">{{  g.gtitle|slice:'10' }}</a>
                 {%  endfor %}
 			</div>
-			<a href="/list1_1_1/" class="goods_more fr" id="fruit_more">View more ></a>
+			{% comment %} <a href="/list1_1_1/" class="goods_more fr" id="fruit_more">View more ></a> {% endcomment %}
 		</div>
 
 		<div class="goods_con clearfix">
@@ -75,13 +74,12 @@
 		<div class="list_title clearfix">
 			<h3 class="fl" id="model02">Short sleeves </h3>
 			<div class="subtitle fl">
-				<span>|</span>
 
                 {% for g in type1 %}
                     <a href="/{{ g.id }}/detail">{{ g.gtitle|slice:'10' }}</a>
                 {% endfor %}
 			</div>
-			<a href="/list2_1_1/" class="goods_more fr">View more ></a>
+			{% comment %} <a href="/list2_1_1/" class="goods_more fr">View more ></a> {% endcomment %}
 		</div>
 
 		<div class="goods_con clearfix">
@@ -103,12 +101,11 @@
 		<div class="list_title clearfix">
 			<h3 class="fl" id="model03">Dresses</h3>
 			<div class="subtitle fl">
-				<span>|</span>
 				{% for g in type2 %}
                     <a href="/{{ g.id }}/detail">{{  g.gtitle|slice:'10' }}</a>
                 {%  endfor %}
 			</div>
-			<a href="/list3_1_1/" class="goods_more fr">View more ></a>
+			{% comment %} <a href="/list3_1_1/" class="goods_more fr">View more ></a> {% endcomment %}
 		</div>
 
 		<div class="goods_con clearfix">
@@ -131,12 +128,11 @@
 		<div class="list_title clearfix">
 			<h3 class="fl" id="model04">Shorts</h3>
 			<div class="subtitle fl">
-				<span>|</span>
 				{% for g in type3 %}
                     <a href="/{{ g.id }}/detail">{{  g.gtitle|slice:'10' }}</a>
                 {%  endfor %}
 			</div>
-			<a href="/list4_1_1/" class="goods_more fr">View more ></a>
+			{% comment %} <a href="/list4_1_1/" class="goods_more fr">View more ></a> {% endcomment %}
 		</div>
 
 		<div class="goods_con clearfix">
@@ -157,12 +153,11 @@
 		<div class="list_title clearfix">
 			<h3 class="fl" id="model05">Long pants</h3>
 			<div class="subtitle fl">
-				<span>|</span>
 				{% for g in type4 %}
                     <a href="/{{ g.id }}/detail">{{  g.gtitle|slice:'10' }}</a>
                 {%  endfor %}
 			</div>
-			<a href="/list5_1_1/" class="goods_more fr">View more ></a>
+			{% comment %} <a href="/list5_1_1/" class="goods_more fr">View more ></a> {% endcomment %}
 		</div>
 
 		<div class="goods_con clearfix">
@@ -184,12 +179,11 @@
 		<div class="list_title clearfix">
 			<h3 class="fl" id="model06">Half Skirt</h3>
 			<div class="subtitle fl">
-				<span>|</span>
 				{% for g in type5 %}
                     <a href="/{{ g.id }}/detail">{{  g.gtitle|slice:'10' }}</a>
                 {%  endfor %}
 			</div>
-			<a href="/list6_1_1/" class="goods_more fr">View more ></a>
+			{% comment %} <a href="/list6_1_1/" class="goods_more fr">View more ></a> {% endcomment %}
 		</div>
 
 		<div class="goods_con clearfix">
