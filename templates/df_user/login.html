@@ -39,14 +39,12 @@
 		<a href="{% url "df_goods:index" %}" class="login_logo"></a>
 	</div>
 
-	<div class="login_form_bg">
-		<div class="login_form_wrap clearfix">
+		{% comment %} <div class="login_form_wrap clearfix"> {% endcomment %}
 <!--			<div class="/static/images/login1.png"></div>-->
-			<div class="slogan fl">Travel day and night · Shopping assistant</div>
-			<div class="login_form fr">
-				<div class="login_title clearfix">
+			{% comment %} <div class="slogan fl">Clothing Online Store</div> {% endcomment %}
+			<div class="login_form">
+				<div class="login_title">
 					<h1>User login</h1>
-					<a href="{% url "df_user:register" %}">Sign up now</a>
 				</div>
 				<div class="form_input">
 					<form action="{% url "df_user:login_handle" %}" method="post">
@@ -57,15 +55,13 @@
 {#                        In the case of cookie settings, the value value guarantees that the value can still be seen on the page after the page is refreshed#}
 						<div class="pwd_error">input error</div>
 						<div class="more_input clearfix">
-							<input type="checkbox" name="jizhu" value="1" checked="checked">
-							<label>Remember Account Name</label>
 							<a href="{% url "df_user:findpassword" %}">forget the password</a>
+                            <a href="{% url "df_user:register" %}">Sign up</a>
 						</div>
 						<input type="submit" name="" value="Log in" class="input_submit">
 					</form>
 				</div>
 			</div>
-		</div>
-	</div>
+		{% comment %} </div> {% endcomment %}
 
 {% endblock body %}

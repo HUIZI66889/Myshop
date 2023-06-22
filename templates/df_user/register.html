@@ -141,13 +141,13 @@
 
 {% block body %}
 	<div class="register_con">
-		<div class="l_con fl">
+		{% comment %} <div class="l_con fl">
 			<a class="reg_logo"></a>
-			<div class="reg_slogan">Stay at home · Shopping every day</div>
+			<div class="reg_slogan">Clothing Online Store</div>
 			<div class="reg_banner"></div>
-		</div>
+		</div> {% endcomment %}
 
-		<div class="r_con fr">
+		<div class="r_con">
 			<div class="reg_title clearfix">
 				<h1>user registration</h1>
 				<a href="{% url "df_user:login" %}">Log in</a>
@@ -157,30 +157,30 @@
                     {% csrf_token %}
 				<ul>
 					<li>
-						<label>username:</label>
+						<label for="user_name">username:</label>
 						<input type="text" name="user_name" id="user_name">
 						<span class="error_tip">prompt information</span>
 					</li>
 					<li>
-						<label>password:</label>
+						<label for="pwd">password:</label>
 						<input type="password" name="pwd" id="pwd">
 						<span class="error_tip">prompt information</span>
 					</li>
 					<li>
-						<label>Confirm Password:</label>
+						<label for="confirm_pwd">Confirm Password:</label>
 						<input type="password" name="confirm_pwd" id="cpwd">
 						<span class="error_tip">prompt information</span>
 					</li>
 					<li>
-						<label>Mail:</label>
+						<label for="email">Mail:</label>
 						<input type="text" name="email" id="email">
 						<span class="error_tip">prompt information</span>
 					</li>
-					<li class="agreement">
-						<input type="checkbox" name="allow" id="allow" checked="checked">
-						<label>Agree to the "Mall User Agreement"</label>
-						<span class="error_tip2">prompt information</span>
-					</li>
+					{% comment %} <li class="agreement"> {% endcomment %}
+						<input type="hidden" name="allow" id="allow" checked="checked" value="checked">
+						{% comment %} <label>Agree to the "Mall User Agreement"</label> {% endcomment %}
+						{% comment %} <span class="error_tip2">prompt information</span> {% endcomment %}
+					{% comment %} </li> {% endcomment %}
 					<li class="reg_sub">
 						<input type="submit" value="register">
 					</li>

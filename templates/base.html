@@ -2,39 +2,47 @@
 
 {% block body %}
 
-    <div class="header_con">
-		<div class="header">
-			<div class="welcome fl">Welcome to the Clothing Shopping Mall!</div>
-			<div class="fr">
+    <div class="cancelheader_con">
+		<div class="navbar d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+			<div class="narbar-brand welcome fl">Clothing Shopping Mall</div>
+			{% comment %} <div class="fr"> {% endcomment %}
 {#               determine if the user already login #}
                 {% if request.session.user_name|default:'' != '' %}
 {#                    default过滤器进行判断如果request.session.user_name不等于空字符串则用户登陆状态为true#}
 {#                    也就是说当用户为已登陆状态时则显示用户名#}
 
 {#                    class="login_info fl"#}
-				<div class="login_btn fl">Welcome <em>{{ request.session.user_name }}</em>
-                    <span>|</span>
+				<div class="navbar-item login_btn fl">&nbsp Welcome <em>{{ request.session.user_name }}</em>
+                    <span>&nbsp</span>
                     <em><a href="{% url "df_user:logout" %}">Logout</a></em>
 				</div>
                 {% else %}
-				<div class="login_btn fl">
+				<div class="navbar-item login_btn fl">
 					<a href="{% url "df_user:login" %}">Login</a>
-					<span>|</span>
+				</div>
+				<div class="navbar-item user_link fl">
+					<span>&nbsp</span>
 					<a href="{% url "df_user:register" %}">Register</a>
 				</div>
                 {% endif %}
-				<div class="user_link fl">
-					<span>|</span>
+				<div class="navbar-item user_link fl">
+					<span>&nbsp</span>
 					<a href="{% url "df_goods:index" %}">Home</a>
-					<span>|</span>
+				</div>
+				<div class="navbar-item user_link fl">
+					<span>&nbsp</span>
 					<a href="{% url "df_user:info" %}">User Center</a>
-					<span>|</span>
+				</div>
+				<div class="navbar-item user_link fl">
+					<span>&nbsp</span>
 					<a href="{% url "df_cart:cart" %}">My Cart</a>
-					<span>|</span>
+				</div>
+				<div class="navbar-item user_link fl">
+					<span>&nbsp</span>
 					<a href="{% url "df_user:order" 1 %}">My Orders</a>
 				</div>
 			</div>
-		</div>
+		{% comment %} </div> {% endcomment %}
 	</div>
 
 

@@ -134,37 +134,41 @@
 
 {% block center_body %}
 	<div class="total_count">All items<em>{{ carts|length }}</em>item</div>
-	<ul class="cart_list_th clearfix">
-		<li class="col01">Product Name</li>
-		<li class="col03">Product unit price</li>
-		<li class="col04">Quantity</li>
-		<li class="col05">Subtotal</li>
-		<li class="col06">Operation</li>
-	</ul>
+    <table class="table">
+	<tr class="cart_list_th clearfix thead-dark">
+        <th></th>
+        <th></th>
+		<th class="col01">Product Name</th>
+		<th class="col03">Product unit price</th>
+		<th class="col04">Quantity</th>
+		<th class="col05">Subtotal</th>
+		<th class="col06">Operation</th>
+    </tr>
 
     {% for cart in carts %}
-	<ul class="cart_list_td clearfix" id="{{ cart.id }}">
-		<li class="col01"><input type="checkbox" name="" id="check_goods" checked="checked"></li>
-		<li class="col02"><img src="/static/{{ cart.goods.gpic }}"></li>
-		<li class="col03">{{ cart.goods.gtitle }}<br><em>RM {{ cart.goods.gprice }}</em><br><em>Balance：<span id="goods_kucun">{{ cart.goods.gkucun }}</span></em></li>
-		<li class="col05">{{ cart.goods.gprice }}</li>
-		<li class="col06">
+	<tr class="cart_list_td clearfix" id="{{ cart.id }}">
+		<td class="col01"><input type="checkbox" name="" id="check_goods" checked="checked"></td>
+		<td class="col02"><img src="/static/{{ cart.goods.gpic }}"></td>
+		<td class="col03">{{ cart.goods.gtitle }}<br><em>RM {{ cart.goods.gprice }}</em><br><em>Balance：<span id="goods_kucun">{{ cart.goods.gkucun }}</span></em></td>
+		<td class="col05">{{ cart.goods.gprice }}</td>
+		<td class="col06">
 			<div class="num_add">
 				<a href="javascript:;" class="add fl">+</a>
 				<input type="text" class="num_show fl" value="{{ cart.count }}" kucun="{{ cart.goods.gkucun }}">
 				<a href="javascript:;" class="minus fl">-</a>
 			</div>
-		</li>
-		<li class="col07"></li>
-		<li class="col08"><a href="javascript:cart_del({{ cart.id }});">Delete</a></li>
-	</ul>
+		</td>
+		<td class="col07"></td>
+		<td class="col08"><a href="javascript:cart_del({{ cart.id }});">Delete</a></td>
+	</tr>
     {% endfor %}
 
+</table>
 	<ul class="settlements">
 		<li class="col01"><input type="checkbox" name="" checked="" id="check_all" href="javascript:;"></li>
 		<li class="col02">Select All</li>
 		<li class="col03">Total (excluding freight):<span>RM</span><em id="total"></em><br>Total<b class="total_count1"></b>Item</li>
-		<li class="col04"><a href="javascript:go_order()">Go to settlement</a></li>
+		<li class="col04"><a href="javascript:go_order()">Pay</a></li>
 	</ul>
 
 {% endblock center_body %}

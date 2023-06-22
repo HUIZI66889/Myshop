@@ -52,7 +52,7 @@
 
 {% block center_content %}
 	<div class="goods_detail_con clearfix">
-		<div class="goods_detail_pic fl"><img src="/static/{{ goods.gpic }}"></div>
+		<div class="goods_detail_pic fl"><img class="img-fluid" src="/static/{{ goods.gpic }}"></div>
 
 		<div class="goods_detail_list fr">
 			<h3>{{ goods.gtitle }}</h3>
@@ -87,7 +87,7 @@
 	</div>
 
 	<div class="main_wrap clearfix">
-		<div class="l_wrap fl clearfix">
+		{% comment %} <div class="l_wrap fl clearfix">
 			<div class="new_goods">
 				<h3>New Products</h3>
 				<ul>
@@ -100,12 +100,11 @@
                     {%  endfor %}
                 </ul>
 			</div>
-		</div>
-
+		</div> {% endcomment %}
+{% comment %} 
 		<div class="r_wrap fr clearfix">
 			<ul class="detail_tab clearfix">
-				<a href="/{{ goods.id }}/detail"><li>Product introduction</li></a>
-				<a href="/{{ goods.id }}/detail"><li class="active">Reviews</li></a>
+				<a href="/{{ goods.id }}/detail"><li>Description</li></a>
 			</ul>
 
 			<div class="tab_content">
@@ -113,9 +112,8 @@
 					<dt>Product Details:</dt>
 					<dd>{{ goods.gcontent|safe }}</dd>
 				</dl>
-			</div>
-
-		</div>
+			</div> 
+		</div> {% endcomment %}
 	</div>
 
 	<div class="add_jump"></div>
